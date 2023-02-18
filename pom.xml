@@ -1,0 +1,23 @@
+<project>
+<modelVersion>4.0.0</modelVersion>
+<groupId>com.seObando.app</groupId>
+<artifactId>learn-manage-dependencies</artifactId>
+<version>1.0</version>
+<dependencies>
+  <!-- https://mvnrepository.com/artifact/org.junit.jupiter/junit-jupiter-api -->
+  <dependency>
+      <groupId>org.junit.jupiter</groupId>
+      <artifactId>junit-jupiter-api</artifactId>
+      <version>5.9.2</version>
+      <scope>test</scope>
+  </dependency>
+  <!-- https://mvnrepository.com/artifact/org.hamcrest/hamcrest -->
+  <dependency>
+      <groupId>org.hamcrest</groupId>
+      <artifactId>hamcrest</artifactId>
+      <version>2.2</version>
+      <scope>test</scope>
+  </dependency>
+</dependencies>
+
+</project>
