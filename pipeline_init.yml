@@ -6,7 +6,7 @@ pool:
   vmImage: ubuntu-latest
 
 stages:
-  - stages:
+  - stage:
     jobs:
       - job: 'Validando ubicacion acual dentro del dispositivo'
         steps:
