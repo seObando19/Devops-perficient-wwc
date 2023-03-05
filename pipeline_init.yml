@@ -1,0 +1,52 @@
+
+trigger:
+  - main
+
+pool:
+  vmImage: ubuntu-latest
+
+stages:
+  - stages:
+    jobs:
+      - job: 'Validando ubicacion acual dentro del dispositivo'
+        steps:
+          - script: pwd
+            displayName: 'observando directorio de trabajo actual'
+
+      - job: 'Instalando dependencias'
+        steps:
+          - script: sudo apt update
+            displayName: 'Actualizando apt'
+
+          - script: sudo apt install default-jre
+            displayName: 'Instalando Java'
+
+          - script: java -version
+            displayName: 'Version Java instalada'
+
+          - script: sudo apt install maven
+            displayName: 'Instalando Maven'
+
+          - script: mvn -version
+            displayName: 'Version Maven instalada'
+
+      - job: 'Instalando proyecto'
+        steps:
+          - script: git clone https://github.com/seObando19/Devops-perficient-wwc
+            displayName: 'clonando proyecto'
+
+      - job: 'Ingresando al proyecto'
+        steps:
+          - script: cd Devops-perficient-wwc
+            displayName: 'desplazo al proyecto'
+
+          - script: pwd
+            displayName: 'Ubicacion dentro de la computadora'
+
+      - job: 'Corriendo pruebas'
+        steps:
+          - script: mvn compile
+            displayName: 'Compilando el proyecto'
+
+          - script: mvn test
+            displayName: 'corriendo pruebas'
